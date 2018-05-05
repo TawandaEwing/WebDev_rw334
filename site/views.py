@@ -38,3 +38,15 @@ def login():
             return redirect(url_for('index'))
 
     return render_template('login.html')
+	
+@app.route('/add_question', methods=['POST'])
+def add_question():
+    text = request.form['question']
+    topics = request.form['topics']
+
+    if not text:
+        flash('You must give your post a title.')
+    else:
+        User(session['username']).add_question(text, topics)
+
+    return redirect(url_for('index'))
