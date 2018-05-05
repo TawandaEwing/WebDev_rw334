@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="master.css" media="screen" title="no title">
-    <title>Login</title>
-  </head>
-  <body>
+{% extends "layout.html" %}
+{% block body %}
+
       <div class="container">
           <div class="row">
                 <div class="col-xs-12">
                     <div class="panel-body">
-                      <form id = "loginform" class="form" action="login.php" method="post">
+                      <form id = "loginform" class="form" action="{{ url_for('login') }}" method="post">
                             <fieldset>
                               <legend>Log in</legend>
                                 <label for="username">Username</label>
@@ -34,13 +27,11 @@
 
                     </div>
                     <div class="panel-body">
-                      Don't have an account? <a href="register.html">register here</a> as a new user.
-                      <br>Click here if you <a href="Changepsw.html">forgot password</a>.
+                      Don't have an account? <a href="{{ url_for('register') }}">register here</a> as a new user.
+                      <br>Click here if you <a href="{{ url_for('changePassword') }}">forgot password</a>.
                     </div>
                 </div>
           </div>
       </div>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </body>
-</html>
+
+{% endblock %}
