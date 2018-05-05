@@ -1,5 +1,7 @@
 $(document).ready(function() {
-
+	
+	//https://youtu.be/IZWtHsM3Y5A - AJAX using jQuery w.r.t python flask
+	
 	//$('form').on('submit', function(event) {
 	//
 	//	$.ajax({
