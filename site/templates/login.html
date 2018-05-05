@@ -11,7 +11,7 @@
           <div class="row">
                 <div class="col-xs-12">
                     <div class="panel-body">
-                      <form id = "loginform" class="form" action="login.php" method="post">
+                      <form id = "loginform" class="form" action="{{ url_for('login') }}" method="post">	<!-- notice action -->
                             <fieldset>
                               <legend>Log in</legend>
                                 <label for="username">Username</label>
@@ -19,7 +19,10 @@
                                 <br>
                                 <br>
                                 <label for="password">Password</label>
-                                <input type="button" name="Login" value="Sign in" onclick="">
+								<input type="password" name="psw" value="">			<!-- password input was wrong -->
+                                <br>
+								<br>
+								<input type="button" name="Login" value="Sign in" onclick="">
                                 <br>
                                 <br>
                                 <label for="agree">Do you agree with our terms and conditions?</label>
