@@ -1,3 +1,5 @@
+####################################  Setup  ####################################
+
 from flask import Flask, request, session, redirect, url_for, render_template, flash
 import os
 
@@ -21,6 +23,9 @@ create_uniqueness_constraint("User", "username")
 create_uniqueness_constraint("Topic", "name")
 create_uniqueness_constraint("Question", "id")
 create_uniqueness_constraint("Answer", "id")
+
+
+##################################  Functions  ##################################
 
 class User:
 	def __init__(self, username):
@@ -71,6 +76,9 @@ def timestamp():
 
 def date():
 	return datetime.now().strftime('%Y-%m-%d')
+
+	
+####################################  Views  ####################################
 
 @app.route('/')
 def index():
@@ -129,6 +137,9 @@ def logout():
 	session.pop('username', None)
 	flash('Logged out.')
 	return redirect(url_for('index'))
+
+	
+###################################  Run app  ###################################
 
 app.secret_key = os.urandom(24)
 app.run(debug=True)
