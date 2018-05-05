@@ -137,6 +137,10 @@ def logout():
 	session.pop('username', None)
 	flash('Logged out.')
 	return redirect(url_for('index'))
+	
+@app.route('/changePassword')
+def changePassword():
+	return render_template('Changepsw.html')
 
 	
 ###################################  Run app  ###################################
