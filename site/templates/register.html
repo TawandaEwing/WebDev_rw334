@@ -1,12 +1,6 @@
-<!DOCTYPE HTML>
-<html lang = "en">
-<head>
-  <title>Register</title>
-  <meta charset = "UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-</head>
-<body>
-    <form action="reg.php" method="post"  id="reg_form">
+{% extends "layout.html" %}
+{% block body %}
+    <form action="{{ url_for('register') }}" method="post"  id="reg_form">
         <div class="reg_container">
         <h1>Register</h1>
         <p>Please fill in this form to create an account.</p>
@@ -25,7 +19,7 @@
         
         <hr>
         
-        <button type="submit" name="register" onclick="">Register</button>
+        <input type="submit" name="register" value="Register">
         </div>
 
         <div class="container signin">
@@ -33,5 +27,4 @@
         </div>
         
     </form>
-</body>
-</html>
+{% endblock %}
